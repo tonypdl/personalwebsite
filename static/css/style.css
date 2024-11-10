@@ -1,0 +1,114 @@
+body {
+    font-family: 'Exo 2', sans-serif;  /* Use Exo 2 font */
+    background-color: #2E004F;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+/* You can also apply Exo 2 to headings and other elements */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Exo 2', sans-serif;  /* Applying to headings */
+    color: #FF5500;
+    text-transform: uppercase;
+    margin: 0.5em 0;
+}
+
+
+a {
+    color: #FF5500;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFFFFF;
+    background-color: #FF5500;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Header */
+header {
+    background-color: #FF5500;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #2E004F;
+}
+
+/* Navigation */
+nav {
+    background-color: #2E004F;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    font-size: 1.2em;
+    color: #FF5500;
+}
+
+nav a:hover {
+    color: #FFFFFF;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    border-bottom: 2px solid #FF5500;
+    padding-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #FF5500;
+    color: #2E004F;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Buttons */
+button {
+    background-color: #FF5500;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2E004F;
+    color: #FF5500;
+}
+
+/* Forms */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #FF5500;
+    border-radius: 5px;
+    background-color: #2E004F;
+    color: #FFFFFF;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #FF5500;
+}
