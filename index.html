@@ -1,15 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="""en"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tony Ponce de Leon's personal website. Educator and Freelance Data Analyst.">
+    <meta property="og:title" content="Tony Ponce de Leon's Website">
+    <meta property="og:description" content="Tony Ponce de Leon's personal website. Educator and Freelance Data Analyst.">
+    <meta property="og:image" content="static/images/og-image.png">
+    <meta property="og:url" content="https://www.tonypdl.com">
     <title>Tony Ponce de Leon's Website</title>
     <link rel="icon" href="static/images/icon.png" type="image/png">
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXX-Y');
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Tony Ponce de Leon",
+      "jobTitle": "Educator and Freelance Data Analyst",
+      "url": "https://www.tonypdl.com",
+      "sameAs": [
+        "https://github.com/tonypdl",
+        "https://www.linkedin.com/in/tonypdl/",
+        "https://bsky.app/profile/ldpynot.bsky.socialBluesky"
+      ]
+    }
+    </script>
 </head>
 <body>
     <header role="banner">
@@ -79,5 +104,22 @@
         <p>Website created by myself via Github Pages.</p>
         <p>&copy; 2024 tonypdl. All rights reserved.</p>
     </footer>
+    <button onclick="topFunction()" id="backToTop" title="Go to top">Top</button>
+    <script>
+        // Back to top button
+        var mybutton = document.getElementById("backToTop");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
 </html>
