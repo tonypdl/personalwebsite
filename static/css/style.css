@@ -1,5 +1,5 @@
 body {
-    font-family: 'Exo 2', sans-serif;  /* Use Exo 2 font */
+    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
     background-color: #2E004F;
     color: #FFFFFF;
     margin: 0;
@@ -8,7 +8,7 @@ body {
 
 /* You can also apply Exo 2 to headings and other elements */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Exo 2', sans-serif;  /* Applying to headings */
+    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
     color: #FF5500;
     text-transform: uppercase;
     margin: 0.5em 0;
@@ -16,11 +16,13 @@ h1, h2, h3, h4, h5, h6 {
 
 
 a {
+    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
     color: #FF5500;
     text-decoration: none;
 }
 
 a:hover {
+    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
     color: #FFFFFF;
     background-color: #FF5500;
     padding: 2px 5px;
@@ -42,6 +44,7 @@ header h1 {
 
 /* Navigation */
 nav {
+    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
     background-color: #2E004F;
     padding: 10px;
     text-align: center;
@@ -59,10 +62,12 @@ nav a:hover {
 
 /* Main Content */
 main {
+    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
     padding: 20px;
 }
 
 section {
+    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
     margin-bottom: 40px;
 }
 
@@ -84,6 +89,7 @@ footer {
 
 /* Buttons */
 button {
+    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
     background-color: #FF5500;
     color: #FFFFFF;
     border: none;
@@ -94,6 +100,7 @@ button {
 }
 
 button:hover {
+    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
     background-color: #2E004F;
     color: #FF5500;
 }
