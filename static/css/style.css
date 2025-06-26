@@ -1,36 +1,40 @@
+:root {
+    --primary-blue: #2541B2;
+    --contrast-red: #C6392B;
+    --accent-yellow: #F2A541;
+    --background-base: #F9F4EF;
+    --support-neutral: #8C6A5D;
+}
+
 body {
-    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
-    background-color: #2E004F;
-    color: #FFFFFF;
+    font-family: 'Andalé Mono', monospace;
+    background-color: var(--background-base);
+    color: var(--primary-blue);
     margin: 0;
     padding: 0;
 }
 
 /* You can also apply Exo 2 to headings and other elements */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
-    color: #FF5500;
+    font-family: 'Andalé Mono', monospace;
+    color: var(--contrast-red);
     text-transform: uppercase;
     margin: 0.5em 0;
 }
 
 a {
-    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
-    color: #FF5500;
-    text-decoration: none;
+    font-family: 'Andalé Mono', monospace;
+    color: var(--primary-blue);
+    text-decoration: underline;
 }
 
 a:hover {
-    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
-    color: #FFFFFF;
-    background-color: #FF5500;
-    padding: 2px 5px;
-    border-radius: 3px;
+    color: var(--contrast-red);
 }
 
 /* Header */
 header {
-    background-color: #FF5500;
+    background-color: var(--contrast-red);
     padding: 20px;
     text-align: center;
 }
@@ -38,13 +42,13 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5em;
-    color: #2E004F;
+    color: var(--background-base);
 }
 
 /* Navigation */
 nav {
-    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
-    background-color: #2E004F;
+    font-family: 'Andalé Mono', monospace;
+    background-color: var(--primary-blue);
     padding: 10px;
     text-align: center;
 }
@@ -52,33 +56,33 @@ nav {
 nav a {
     margin: 0 15px;
     font-size: 1.2em;
-    color: #FF5500;
+    color: var(--background-base);
 }
 
 nav a:hover {
-    color: #FFFFFF;
+    color: var(--accent-yellow);
 }
 
 /* Main Content */
 main {
-    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
+    font-family: 'Andalé Mono', monospace;
     padding: 20px;
 }
 
 section {
-    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
+    font-family: 'Andalé Mono', monospace;
     margin-bottom: 40px;
 }
 
 section h2 {
-    border-bottom: 2px solid #FF5500;
+    border-bottom: 2px solid var(--support-neutral);
     padding-bottom: 10px;
 }
 
 /* Footer */
 footer {
-    background-color: #FF5500;
-    color: #2E004F;
+    background-color: var(--contrast-red);
+    color: var(--background-base);
     text-align: center;
     padding: 10px;
     position: fixed;
@@ -88,9 +92,9 @@ footer {
 
 /* Buttons */
 button {
-    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
-    background-color: #FF5500;
-    color: #FFFFFF;
+    font-family: 'Andalé Mono', monospace;
+    background-color: var(--primary-blue);
+    color: var(--background-base);
     border: none;
     padding: 10px 20px;
     font-size: 1em;
@@ -99,9 +103,8 @@ button {
 }
 
 button:hover {
-    font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
-    background-color: #2E004F;
-    color: #FF5500;
+    background-color: var(--contrast-red);
+    color: var(--background-base);
 }
 
 /* Forms */
@@ -109,25 +112,66 @@ input, textarea {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #FF5500;
+    border: 1px solid var(--support-neutral);
     border-radius: 5px;
-    background-color: #2E004F;
-    color: #FFFFFF;
+    background-color: var(--background-base);
+    color: var(--primary-blue);
 }
 
 input::placeholder, textarea::placeholder {
-    color: #FF5500;
+    color: var(--support-neutral);
 }
+
 /* Expandable platform sections */
-details {
+details.platform-point {
     margin-bottom: 10px;
+    border: 2px solid var(--accent-yellow);
+    border-radius: 5px;
+    background-color: #FFFFFF;
 }
 
-details summary {
+details.platform-point summary {
+    list-style: none;
     cursor: pointer;
-    color: #FF5500;
+    font-weight: bold;
+    padding: 10px;
+    color: var(--primary-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-details details {
-    margin-left: 20px;
+details.platform-point summary::-webkit-details-marker {
+    display: none;
+}
+
+details.platform-point summary::after {
+    content: '+';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary-blue);
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+details.platform-point[open] summary {
+    background-color: var(--primary-blue);
+    color: #FFFFFF;
+}
+
+details.platform-point[open] summary::after {
+    content: '×';
+    background-color: var(--accent-yellow);
+    color: #FFFFFF;
+}
+
+details.platform-point > *:not(summary) {
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-top: 1px solid var(--support-neutral);
 }
