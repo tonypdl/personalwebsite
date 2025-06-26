@@ -14,7 +14,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0.5em 0;
 }
 
-
 a {
     font-family: 'Andalé Mono', monospace;  /* Use Andalé Mono font */
     color: #FF5500;
@@ -118,4 +117,17 @@ input, textarea {
 
 input::placeholder, textarea::placeholder {
     color: #FF5500;
+}
+/* Expandable platform sections */
+details {
+    margin-bottom: 10px;
+}
+
+details summary {
+    cursor: pointer;
+    color: #FF5500;
+}
+
+details details {
+    margin-left: 20px;
 }
