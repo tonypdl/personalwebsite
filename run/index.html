@@ -150,21 +150,6 @@
             transform: translateX(5px);
         }
 
-        /* Mobile Navigation Toggle */
-        .mobile-nav-toggle {
-            display: none;
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: #a2d3e7;
-            color: #0b3c61;
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 1001;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
         /* Mobile Navigation Toggle Button */
         .mobile-nav-toggle {
             display: none;
@@ -172,8 +157,8 @@
             top: 20px;
             left: 20px;
             z-index: 1001;
-            background: #FF6B35;
-            color: white;
+            background: #e93329;
+            color: #fdf4e3;
             padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
@@ -183,7 +168,7 @@
         }
         
         .mobile-nav-toggle:hover {
-            background: #e55a2b;
+            background: #d62828;
         }
 
         /* Mobile responsive navigation */
@@ -193,20 +178,52 @@
             }
             
             .floating-nav {
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
+                left: -100% !important;
+                top: 0 !important;
+                width: 200px !important;
+                height: auto !important;
+                max-height: 100vh !important;
+                transform: none !important;
+                border-radius: 0 !important;
+                padding: 80px 15px 20px 15px !important;
+                transition: left 0.3s ease !important;
+                z-index: 1000;
+                overflow-y: auto !important;
             }
             
             .floating-nav.open {
-                transform: translateX(0);
+                left: 0 !important;
             }
             
+            /* Disable hover behavior on mobile */
             .floating-nav:hover {
-                transform: translateX(-100%);
+                left: -100% !important;
             }
             
             .floating-nav.open:hover {
-                transform: translateX(0);
+                left: 0 !important;
+            }
+            
+            /* Remove desktop click state on mobile */
+            .floating-nav.open-desktop {
+                left: -100% !important;
+            }
+            
+            /* Hide hamburger icon on mobile */
+            .floating-nav::before {
+                display: none !important;
+            }
+            
+            /* Make nav links smaller on mobile to match desktop */
+            .floating-nav a {
+                font-size: 0.85em !important;
+                padding: 5px 8px !important;
+                margin: 8px 0 !important;
+            }
+            
+            .floating-nav h3 {
+                font-size: 0.9em !important;
+                margin-bottom: 10px !important;
             }
         }
     </style>
@@ -1109,6 +1126,16 @@
                     link.addEventListener('click', function() {
                         floatingNav.classList.remove('open');
                     });
+                });
+                
+                // Close mobile nav when clicking outside on mobile
+                document.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768 && 
+                        floatingNav.classList.contains('open') && 
+                        !floatingNav.contains(e.target) && 
+                        !mobileToggle.contains(e.target)) {
+                        floatingNav.classList.remove('open');
+                    }
                 });
             }
             
