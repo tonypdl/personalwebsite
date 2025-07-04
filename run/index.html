@@ -98,6 +98,9 @@
         .floating-nav:hover {
             left: 0;
         }
+        .floating-nav.open-desktop {
+            left: 0;
+        }
         .floating-nav::before {
             content: "☰";
             position: absolute;
@@ -112,6 +115,10 @@
             font-weight: bold;
             cursor: pointer;
             box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .floating-nav::before:hover {
+            background-color: #8bc5d9;
         }
         .floating-nav h3 {
             margin: 0 0 10px 0;
@@ -1091,6 +1098,7 @@
             const floatingNav = document.querySelector('.floating-nav');
             
             if (mobileToggle && floatingNav) {
+                // Mobile toggle button functionality
                 mobileToggle.addEventListener('click', function() {
                     floatingNav.classList.toggle('open');
                 });
@@ -1101,6 +1109,41 @@
                     link.addEventListener('click', function() {
                         floatingNav.classList.remove('open');
                     });
+                });
+            }
+            
+            // Desktop hamburger menu click functionality
+            if (floatingNav) {
+                floatingNav.addEventListener('click', function(e) {
+                    // Check if the click is on the hamburger menu (::before pseudo-element area)
+                    const rect = floatingNav.getBoundingClientRect();
+                    const hamburgerArea = {
+                        left: rect.right,
+                        right: rect.right + 30,
+                        top: rect.top + (rect.height / 2) - 20,
+                        bottom: rect.top + (rect.height / 2) + 20
+                    };
+                    
+                    // Only toggle if clicking in the hamburger area and not on mobile
+                    if (e.clientX >= hamburgerArea.left && e.clientX <= hamburgerArea.right &&
+                        e.clientY >= hamburgerArea.top && e.clientY <= hamburgerArea.bottom &&
+                        window.innerWidth > 768) {
+                        floatingNav.classList.toggle('open-desktop');
+                    }
+                });
+                
+                // Close desktop menu when clicking anywhere else
+                document.addEventListener('click', function(e) {
+                    if (!floatingNav.contains(e.target) && window.innerWidth > 768) {
+                        floatingNav.classList.remove('open-desktop');
+                    }
+                });
+                
+                // Remove desktop class on window resize if switching to mobile
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth <= 768) {
+                        floatingNav.classList.remove('open-desktop');
+                    }
                 });
             }
         });
