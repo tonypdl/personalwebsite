@@ -95,7 +95,7 @@
         /* Floating Navigation Menu Styles */
         .floating-nav {
             position: fixed;
-            left: calc(-200px + 15px);
+            left: -200px;
             top: 50%;
             transform: translateY(-50%);
             background-color: #a2d3e7;
@@ -114,8 +114,8 @@
         }
         .floating-nav::before {
             content: "☰";
-            position: absolute;
-            right: -15px;
+            position: fixed;
+            left: 15px;
             top: 50%;
             transform: translateY(-50%);
             background-color: #a2d3e7;
@@ -127,6 +127,7 @@
             cursor: pointer;
             box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
+            z-index: 1001;
         }
         .floating-nav::before:hover {
             background-color: #8bc5d9;
